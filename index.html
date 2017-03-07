@@ -9,7 +9,7 @@
   cardHigh.services('helpdesk').request('tickets', {priority: 'high'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('status') == 'open')
-        $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary);
+        $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.site);
        });
   });
  
