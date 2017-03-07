@@ -7,7 +7,7 @@
   var card = new SW.Card();
   card.services('helpdesk').request('tickets').then(function(data){
       $.each(data.tickets, function(index, ticket){
-         $('body').append('<p>' + ticket.summary);
+         $('body').append('<p>' + ticket.id +" "+ ticket.summary);
        });
   });
   </script>
