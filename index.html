@@ -12,10 +12,17 @@
        });
   });
  
-   var cardMed = new SW.Card();
-   cardMed.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
+   var cardPool = new SW.Card();
+   cardPool.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary);
+         $('#TicketPool').append('<p>' + ticket.id +" "+ ticket.summary);
+       });
+  });
+   
+   var cardDoing = new SW.Card();
+   cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open', site: 'Doing'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){       
+         $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);
        });
   });
   }); 
@@ -33,10 +40,19 @@
 </tbody>
 </table>
   
- <table border="1"><caption><strong>Ticket Pool</strong></caption>
+ <table align="left" border="1"><caption><strong>Ticket Pool</strong></caption>
 <tbody>
 <tr>
- <td id="Normal">
+ <td id="TicketPool">
+ </td>
+</tr>
+</tbody>
+</table>
+  
+  <table align="left" border="1"><caption><strong>Doing</strong></caption>
+<tbody>
+<tr>
+ <td id="Doing">
  </td>
 </tr>
 </tbody>
