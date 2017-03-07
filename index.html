@@ -9,7 +9,7 @@
   cardHigh.services('helpdesk').request('tickets', {priority: 'high'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('status') == 'open')
-        $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.site);
+        $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary);
        });
   });
  
@@ -17,14 +17,14 @@
    cardMed.services('helpdesk').request('tickets', {priority: 'med'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('status') == 'open')
-         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.Category +" "+ ticket.site);
+         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary);
        });
   });
   }); 
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!Final2</h3>
+  <h3>Kanban Yeah!Final</h3>
   
   <p><strong>Fast Lane:</strong></p>
  <table border="1">
