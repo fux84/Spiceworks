@@ -13,7 +13,7 @@
   });
  
    var cardMed = new SW.Card();
-   cardMed.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
+   cardMed.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
          $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary);
        });
