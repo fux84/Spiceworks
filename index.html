@@ -17,7 +17,7 @@
    cardMed.services('helpdesk').request('tickets', {priority: 'med'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('status') == 'open')
-         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.category);
+         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.Category);
        });
   });
   }); 
