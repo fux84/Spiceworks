@@ -6,8 +6,8 @@
   <script type="text/javascript">
   var card = new SW.Card();
   card.services('helpdesk').request('tickets').then(function(data){
-      $.each(data.tickets, function(index, device){
-         $('body').append('<p>' + device.name);
+      $.each(data.tickets, function(index, ticket){
+         $('body').append('<p>' + ticket.id);
        });
   });
   </script>
