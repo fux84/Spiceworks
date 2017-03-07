@@ -20,7 +20,7 @@
   });
    
    var cardDoing = new SW.Card();
-   cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open', site: 'Doing'}).then(function(data){
+   cardDoing.services('helpdesk').request('tickets.admin_defined_attrs', {State: 'Doing'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
          $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);
        });
