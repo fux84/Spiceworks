@@ -14,7 +14,7 @@
   });
  
    var cardMed = new SW.Card();
-   cardMed.services('helpdesk').request('tickets', {priority: 'med'}).then(function(data){
+   cardMed.services('helpdesk').request('tickets', {priority: 'med', id: 5}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('status') == 'open')
          $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary);
