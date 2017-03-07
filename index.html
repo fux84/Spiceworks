@@ -7,7 +7,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       if($('ticket').attr('status') == 'open') {
+       if($('ticket.status') == 'open') {
          $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.status);
        }
        });
@@ -23,7 +23,7 @@
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!New</h3>
+  <h3>Kanban Yeah!</h3>
   
   <p><strong>Fast Lane:</strong></p>
  <table>
