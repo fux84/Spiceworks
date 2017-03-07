@@ -7,7 +7,7 @@
   var card = new SW.Card();
   card.services('helpdesk').request('tickets', {priority: 'med'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-         $('p1').append('<p>' + ticket.id +" "+ ticket.summary);
+         $('#Normal').append('<p>' + ticket.id +" "+ ticket.summary);
        });
   });
   </script>
