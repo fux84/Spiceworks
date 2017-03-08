@@ -83,9 +83,9 @@
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing'){
         if($(this).attr('priority') == '2')
-         $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');
+         $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee.first_name+'</td></tr>');
         if($(this).attr('priority') == '3')
-         $('#Doing').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');     
+         $('#Doing').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee.first_name+'</td></tr>');     
        }
        });
   });   
