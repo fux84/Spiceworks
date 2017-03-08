@@ -26,12 +26,21 @@
   <script type="text/javascript">
   $(document).ready(function(){
    var cardDoing = new SW.Card();
-   cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
+   cardDoing.services('helpdesk').request('tickets', {priority: 'med', priority: 'low', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" DOING "+ ticket.category);
-       if($(this).attr('id') == '5')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" ID "+ ticket.category);
+       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +"  "+ ticket.category);       
+       });
+  });   
+  }); 
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+   var cardReview = new SW.Card();
+   cardReview.services('helpdesk').request('tickets', {priority: 'med', priority: 'low', status: 'open'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){
+       if($(this).attr('category') == 'Review')
+       $('#Review').append('<p>' + ticket.id +" "+ ticket.summary +"  "+ ticket.category);       
        });
   });   
   }); 
@@ -62,6 +71,15 @@
 <tbody>
 <tr>
  <td id="Doing">
+ </td>
+</tr>
+</tbody>
+</table>
+  
+  <table align="left" border="1"><caption><strong>Review</strong></caption>
+<tbody>
+<tr>
+ <td id="Review">
  </td>
 </tr>
 </tbody>
