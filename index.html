@@ -28,9 +28,7 @@
    var cardDoing = new SW.Card();
    cardDoing.services('helpdesk').request('tickets', {id: '5'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       $.each(ticket.*, function(att){
-         $('#Doing').append('<p>' + att;
-       }];
+       
        });
   });   
   }); 
