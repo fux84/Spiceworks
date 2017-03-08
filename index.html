@@ -18,7 +18,7 @@
    var cardPool = new SW.Card();
    cardPool.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-         $('#TicketPool').append('<p>' + ticket.id +" "+ ticket.summary);
+         $('#TicketPool').append('<tr><td bgcolor="#FF0000">' + ticket.id +" "+ ticket.summary +'</td></tr>');
        });
   });   
   }); 
@@ -43,12 +43,8 @@
  </tbody>
 </table>
   
- <table align="left" border="1"><caption><strong>Ticket Pool</strong></caption>
-<tbody>
-<tr>
- <td id="TicketPool">
- </td>
-</tr>
+<table align="left" border="1"><caption><strong>Ticket Pool</strong></caption>
+<tbody id="TicketPool">
 </tbody>
 </table>
   
