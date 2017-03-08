@@ -29,7 +29,7 @@
   <script type="text/javascript">
   $(document).ready(function(){
    var cardDoing = new SW.Card();
-   cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
+   cardDoing.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing'){
         if($(this).attr('priority') == '2')
@@ -43,7 +43,7 @@
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!2222</h3>  
+  <h3>Kanban Yeah!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
  <tbody id="Fast">
