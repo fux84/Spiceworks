@@ -29,6 +29,7 @@
    cardDoing.services('helpdesk').request('tickets', {id: '5'}).then(function(data){
       $.each(data.tickets, function(index, ticket){                   
          $('#Doing').append('<p>' + ticket.id +" "+ ticket.admin_defined_attrs.State);
+         $('#Doing').append('<p>' + ticket);
        });
   });   
   }); 
