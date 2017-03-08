@@ -43,7 +43,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       var assignee = ticket.assignee;
+       var assignee = ticket.assignee.first_name;
         $('#Fast').append('<tr><td bgcolor="#FF0000">'+ticket.id+" "+ticket.summary+'<br>'+assignee+'</td></tr>');
        });
   });   
@@ -82,11 +82,12 @@
    var cardDoing = new SW.Card();
    cardDoing.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
+       var assignee = ticket.assignee.first_name;
        if($(this).attr('category') == 'Doing'){
         if($(this).attr('priority') == '2')
-         $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');
+         $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'<br>'+assignee+'</td></tr>');
         if($(this).attr('priority') == '3')
-         $('#Doing').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');     
+         $('#Doing').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'<br>'+assignee+'</td></tr>');     
        }
        });
   });   
