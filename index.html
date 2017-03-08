@@ -43,7 +43,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-        $('#Fast').append('<tr><td bgcolor="#FF0000">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee.first_name+'</td></tr>');
+        $('#Fast').append('<tr><td bgcolor="#FF0000">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');
        });
   });   
   }); 
