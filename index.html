@@ -19,17 +19,12 @@
        });
   });
    
-   var cardDoing = new SW.Card();
-   cardDoing.services('helpdesk').request('tickets', {State: 'Doing'}).then(function(data){
-      $.each(data.tickets, function(index, ticket){       
-         $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);
-       });
-  });
+   
   }); 
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!Finaldddddd</h3>  
+  <h3>Kanban Yeah!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
 <tbody>
