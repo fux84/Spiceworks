@@ -8,7 +8,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-        $('#Fast').append('<p>' + ticket.id +" "+ ticket.summary);
+        $('#Fast').append('<tr><td bgcolor="#FF0000">' + ticket.id +" "+ ticket.summary +'</td></tr>');
        });
   });   
   }); 
@@ -39,12 +39,8 @@
   <h3>Kanban Yeah!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
-<tbody>
-<tr>
- <td id="Fast" bgcolor="#FF0000">
- </td>
-</tr>
-</tbody>
+ <tbody id="Fast">
+ </tbody>
 </table>
   
  <table align="left" border="1"><caption><strong>Ticket Pool</strong></caption>
