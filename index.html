@@ -31,15 +31,19 @@
    var cardDoing = new SW.Card();
    cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       if($(this).attr('category') == 'Doing')
-       $('#Doing').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');       
+       if($(this).attr('category') == 'Doing'){
+        if($(this).attr('priority') == '2')
+         $('#TicketPool').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+       if($(this).attr('priority') == '3')
+         $('#TicketPool').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');     
+       }
        });
   });   
   }); 
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!</h3>  
+  <h3>Kanban Yeah!2222</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
  <tbody id="Fast">
