@@ -4,7 +4,7 @@
   
  </head>
  <body>
-  <h3>Kanban Yeah!222</h3>  
+  <h3>Kanban Yeah!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
  <tbody id="Fast">
@@ -43,7 +43,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-        $('#Fast').append('<tr><td bgcolor="#FF0000">' + ticket.id +" "+ ticket.summary +'</td></tr>');
+        $('#Fast').append('<tr><td bgcolor="#FF0000">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');
        });
   });   
   }); 
@@ -54,9 +54,9 @@
    cardPool.services('helpdesk').request('tickets', {status: 'open', assignee: 'none'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('priority') == '2')
-         $('#TicketPool').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+         $('#TicketPool').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'</td></tr>');
        if($(this).attr('priority') == '3')
-         $('#TicketPool').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');       
+         $('#TicketPool').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'</td></tr>');       
        });
   });   
   }); 
@@ -68,9 +68,9 @@
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Next'){
         if($(this).attr('priority') == '2')
-         $('#Next').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+         $('#Next').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'</td></tr>');
         if($(this).attr('priority') == '3')
-         $('#Next').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');     
+         $('#Next').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'</td></tr>');     
        }
        });
   });   
@@ -83,9 +83,9 @@
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing'){
         if($(this).attr('priority') == '2')
-         $('#Doing').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+         $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');
         if($(this).attr('priority') == '3')
-         $('#Doing').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');     
+         $('#Doing').append('<tr><td bgcolor="#00aaff">'+ticket.id+" "+ticket.summary+'<br>'+ticket.assignee+'</td></tr>');     
        }
        });
   });   
