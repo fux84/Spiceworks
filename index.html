@@ -22,6 +22,7 @@
          $('#TicketPool').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
        if($(this).attr('priority') == '3')
          $('#TicketPool').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+       $('#TicketPool').append('<p>' + "Test");
        });
   });   
   }); 
@@ -43,7 +44,7 @@
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!2222</h3>  
+  <h3>Kanban Yeah!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
  <tbody id="Fast">
