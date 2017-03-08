@@ -23,6 +23,16 @@
   });   
   }); 
   </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+   var cardDoing = new SW.Card();
+   cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){       
+         $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);
+       });
+  });   
+  }); 
+  </script>
  </head>
  <body>
   <h3>Kanban Yeah!2</h3>  
