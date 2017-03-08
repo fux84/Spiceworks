@@ -16,12 +16,9 @@
   <script type="text/javascript">
   $(document).ready(function(){
    var cardPool = new SW.Card();
-   cardPool.services('helpdesk').request('tickets', {status: 'open', assignee: 'none'}).then(function(data){
-      $.each(data.tickets, function(index, ticket){
-		if($(this).attr('priority') == 'med')
-         $('#TicketPool').append('<tr><td bgcolor="#ffff00>' + ticket.id +" "+ ticket.summary +'</td></tr>');
-		if($(this).attr('priority') == 'low')
-         $('#TicketPool').append('<tr><td bgcolor="#009eff>' + ticket.id +" "+ ticket.summary +'</td></tr>');
+   cardPool.services('helpdesk').request('tickets', {priority: 'med', status: 'open', assignee: 'none'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){       
+         $('#TicketPool').append('<tr><td bgcolor="#FF0000">' + ticket.id +" "+ ticket.summary +'</td></tr>');
        });
   });   
   }); 
