@@ -18,7 +18,7 @@
    var cardPool = new SW.Card();
    cardPool.services('helpdesk').request('tickets', {status: 'open', assignee: 'none'}).then(function(data){
       $.each(data.tickets, function(index, ticket){       
-         $('#TicketPool').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary +'</td></tr>');
+         $('#TicketPool').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary +" "+ ticket.priority +'</td></tr>');
        });
   });   
   }); 
