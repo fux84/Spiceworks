@@ -28,14 +28,14 @@
    var cardDoing = new SW.Card();
    cardDoing.services('helpdesk').request('tickets', {id: '5'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.state);
+       $('#Doing').append('<p>' + ticket.id +" "+ ticket.assignee +" "+ ticket.admin_defined_attrs +" "+ ticket.site +" "+ ticket.category);
        });
   });   
   }); 
   </script>
  </head>
  <body>
-  <h3>Kanban Yeah!</h3>  
+  <h3>Kanban Yeah!!!!!</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
 <tbody>
