@@ -4,7 +4,7 @@
   
  </head>
  <body>
-  <h3>Kanban Yeah!</h3>  
+  <h3>Kanban Yeah!222</h3>  
  
  <table border="1"><caption><strong>Fast Lane</strong></caption>
  <tbody id="Fast">
@@ -23,6 +23,16 @@
   
   <table align="left" border="1"><caption><strong>Doing</strong></caption>
 <tbody id="Doing">
+</tbody>
+</table>
+  
+  <table align="left" border="1"><caption><strong>Review</strong></caption>
+<tbody id="Review">
+</tbody>
+</table>
+  
+  <table align="left" border="1"><caption><strong>Done</strong></caption>
+<tbody id="Done">
 </tbody>
 </table>
 
@@ -80,7 +90,37 @@
        });
   });   
   }); 
-  </script>  
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+   var cardReview = new SW.Card();
+   cardReview.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){
+       if($(this).attr('category') == 'Review'){
+        if($(this).attr('priority') == '2')
+         $('#Review').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+        if($(this).attr('priority') == '3')
+         $('#Review').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');     
+       }
+       });
+  });   
+  }); 
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+   var cardDone = new SW.Card();
+   cardDone.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
+      $.each(data.tickets, function(index, ticket){
+       if($(this).attr('category') == 'Done'){
+        if($(this).attr('priority') == '2')
+         $('#Done').append('<tr><td bgcolor="#ffff00">' + ticket.id +" "+ ticket.summary+'</td></tr>');
+        if($(this).attr('priority') == '3')
+         $('#Done').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');     
+       }
+       });
+  });   
+  }); 
+  </script>
   
  </body>
 </html>
