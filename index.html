@@ -43,7 +43,7 @@
    var cardHigh = new SW.Card();
   cardHigh.services('helpdesk').request('tickets', {priority: 'high', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
-       var assignee = ticket.assignee
+       var assignee = ticket.assignee;
         $('#Fast').append('<tr><td bgcolor="#FF0000">'+ticket.id+" "+ticket.summary+'<br>'+assignee+'</td></tr>');
        });
   });   
