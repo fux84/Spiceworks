@@ -29,9 +29,9 @@
    cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.category);
+       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" DOING "+ ticket.category);
        if($(this).attr('id') == '5')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.category);
+       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" ID "+ ticket.category);
        });
   });   
   }); 
