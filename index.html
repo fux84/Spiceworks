@@ -80,8 +80,7 @@
   $(document).ready(function(){
    var cardDoing = new SW.Card();
    cardDoing.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
-      $.each(data.tickets, function(index, ticket){
-       var assignee = ticket.assignee.first_name;
+      $.each(data.tickets, function(index, ticket){       
        if($(this).attr('category') == 'Doing'){
         if($(this).attr('priority') == '2')
          $('#Doing').append('<tr><td bgcolor="#ffff00">'+ticket.id+" "+ticket.summary+'</td></tr>');
