@@ -26,10 +26,10 @@
   <script type="text/javascript">
   $(document).ready(function(){
    var cardDoing = new SW.Card();
-   cardDoing.services('helpdesk').request('tickets').then(function(data){
+   cardDoing.services('helpdesk').request('tickets', {status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('Category') == 'Doing')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);
+       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary +" "+ ticket.category);
        });
   });   
   }); 
