@@ -32,7 +32,7 @@
    cardDoing.services('helpdesk').request('tickets', {priority: 'med', status: 'open'}).then(function(data){
       $.each(data.tickets, function(index, ticket){
        if($(this).attr('category') == 'Doing')
-       $('#Doing').append('<p>' + ticket.id +" "+ ticket.summary);       
+       $('#Doing').append('<tr><td bgcolor="#00aaff">' + ticket.id +" "+ ticket.summary+'</td></tr>');       
        });
   });   
   }); 
@@ -52,11 +52,7 @@
 </table>
   
   <table align="left" border="1"><caption><strong>Doing</strong></caption>
-<tbody>
-<tr>
- <td id="Doing">
- </td>
-</tr>
+<tbody id="Doing">
 </tbody>
 </table>
   
